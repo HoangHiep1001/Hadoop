@@ -15,4 +15,18 @@
  - Lợi ích khi dùng Hadoop:
    + Có thể thêm node mới khi cần
    + Không cần các phần cứng đặc biệt
-   + Khi 1 node lỗi thì hadoop tự chuyển sang node khác và xử lí dữ liệu tiếp 
+   + Khi 1 node lỗi thì hadoop tự chuyển sang node khác và xử lí dữ liệu tiếp
+2, MapReduce:
+ - Là mô hình xử lí dữ liệu, chia ra làm 2 giai đoạn:
+    + Map: nhận input là các cặp giá trị (key, value) và đầu ra là các cặp giá trị (key',value') trung gian và thông báo cho reduce nhận dữ liệu
+    + Reduce: nhận đầu vào là các cặp (key', value') trung gian và ghép nối lại thành tập key nhỏ hơn
+ - MapReduce job là một đơn vị công việc mà client muốn thực hiện. Bao gồm: input data, chương trình mapreduce người dùng cài đặt và các thông số cấu hình. Hadoop thực hiện job bằng cách chia thành các task: maptask và reducetask
+ - Có 2 loại node trong quá trình thực thi job là: jobTracker và taskTracker. JobTracker sẽ kết hợp các job chạy trên hệ thống và lập lịch cho tasktracker. Nếu 1 task lỗi, jobtracker sẽ lập lịch lại cho tasktracker khác.
+ - Hadoop chia dữ liệu đầu vào cho mapreduce job thành các data block với kích thước xác định. Mỗi data block sẽ có một map task chạy các hàm map do client cài đặt.( với HDFS thì kích thước block data mặc định là 64 MB do mục đích của HDFS là quản lí các dữ liệu lớn)
+ - Sơ đồ luồng dữ liệu của MapReduce cho một reduce task:
+![alt text](https://bienuit.files.wordpress.com/2014/07/selection_003.png)
+
+
+3, HDFS:
+ - Là hệ thống lưu trữ chính dùng trong Hadoop
+ - 
