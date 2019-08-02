@@ -16,6 +16,9 @@
    + Có thể thêm node mới khi cần
    + Không cần các phần cứng đặc biệt
    + Khi 1 node lỗi thì hadoop tự chuyển sang node khác và xử lí dữ liệu tiếp
+
+
+
 2, MapReduce:
  - Là mô hình xử lí dữ liệu, chia ra làm 2 giai đoạn:
     + Map: nhận input là các cặp giá trị (key, value) và đầu ra là các cặp giá trị (key',value') trung gian và thông báo cho reduce nhận dữ liệu
@@ -28,5 +31,8 @@
 
 
 3, HDFS:
- - Là hệ thống lưu trữ chính dùng trong Hadoop
- - 
+ - Là hệ thống lưu trữ chính dùng trong Hadoop, cung cấp khả năng truy cập với hiệu suất cao đến dữ liệu trên các cụm Hadoop.
+ - HDFS tạo ra các phần nhỏ hơn của dữ liệu lớn và phân tán nó lên các node, mỗi phần dữ liệu nhỏ cũng đc sao chép nhiều lần trên nhiều node khác nhau. Chính vì vậy mà khi có lỗi ở một node thì hệ thống tự động dùng dữ liệu của node khác và tiếp tục xử lí dữ liệu.
+ - Một HDFS cluster bao gồm 1 namenode là một node master quản lí hệ thống tệp tin, điều chỉnh truy cập đến các tập tin khác và các datanode bổ sung cho namenode, tác vụ chính của datanode là đọc và ghi tệp tin.
+ - Kiến trúc của một HDFS:
+![alt text](https://dinhnguyenngoc.files.wordpress.com/2014/07/hdfs_architecture.png?w=768&h=485) 
