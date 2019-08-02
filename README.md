@@ -1,5 +1,7 @@
 # Hadoop
 ![alt text](https://dinhnguyenngoc.files.wordpress.com/2014/07/what_is_hadoop.png?w=587&h=139)
+
+
 1, Hadoop:
  - Cung cấp một nền tảng phân tán để quản lí và lưu trữ bigdata, lấy cảm hứng từ MapReduce và Google File System(GFS)
  - Điểm mạnh của Hadoop là cung cấp độ tin cậy và tính sẵn sàng cao
