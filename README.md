@@ -38,3 +38,25 @@
 
 Spark Hadoop
 ![alt text](https://viblo.asia/uploads/e458bfb3-2876-490e-8456-d1b03f87600c.jpg)
+
+
+* Lazy RDD
+ - Tất cả các transformation trong Spark đều là lazy, nó không tính các kết quả ngay mà thay vào đó chỉ nhớ các biến đổi cho bộ dữ liệu. Các phép biến đổi chỉ đc tính khi có 1 actions đc yêu cầu
+* Các operation trong rdd:
+ - tranformation: tạo ra tập dữ liệu mới từ tập dữ liệu hiện có
+   + map(func): trả lại một tập data mới đc hình thành bằng cách áp dụng hàm func cho mỗi phần tử của tập dữ liệu nguồn
+   + filter(func): trả về một tập dữ liệu mới tạo ra bằng cách lọc các phần tử của tập dữ liệu nguồn mà func trả về true.
+   + flatMap: tương tự map nhưng mỗi phần tử có thể trả về 0 hoặc nhiều phần tử
+   + union(other Data): trả về một một bộ dữ liệu mới là sự kết hợp của bộ dữ liệu nguồn và other Data
+   + distinct: trả về bộ dữ liệu mới chưa các phần tử không trùng lặp của dữ liệu nguồn
+   + groupByKey:trả về một tập dữ liệu các cặp <K,Iterator<V>> được gọi khi tập dữ liệu là <K,V>
+   + reduceByKey(func): trả về một tập dữ liệu các cặp <K,V>, trong đó mỗi key đc tổng hợp bằng hàm func
+   + join: đc gọi khi tập dữ liệu là (K,V) và (K,W) trả về tập dữ liệu (K,V+W) với all phần tử cho mỗi key
+ - actions: trả lại kết quả sau khi chạy tính toán trên tập dữ liệu
+   + reduce: Tập hợp các phần tử tập data sử dụng cùng 1 hàm func
+   + collect: trả về all phần tử data dạng mảng
+   + count: Trả về số lượng phần tử tập data
+* Spark cung cấp 2 kiểu shared variables
+ - Broadcast Variables: Chỉ được phép đọc giá trị biến trên mỗi máy, không cho phép sửa đổi nhằm đảm bảo cùng giá trị của biến broadcasr trên all node
+- Accumulators: là biến chỉ được phép add qua các phương thức như: sum,count,.. hỗ trợ hiệu quả tính toan song song. Cho phép thay đổi giá trị, đọc ghi trên biến này
+*  
