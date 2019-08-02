@@ -38,11 +38,9 @@
 
 Spark Hadoop
 ![alt text](https://viblo.asia/uploads/e458bfb3-2876-490e-8456-d1b03f87600c.jpg)
-
-
-* Lazy RDD
+1, Lazy RDD
  - Tất cả các transformation trong Spark đều là lazy, nó không tính các kết quả ngay mà thay vào đó chỉ nhớ các biến đổi cho bộ dữ liệu. Các phép biến đổi chỉ đc tính khi có 1 actions đc yêu cầu
-* Các operation trong rdd:
+2, Các operation trong rdd:
  - tranformation: tạo ra tập dữ liệu mới từ tập dữ liệu hiện có
    + map(func): trả lại một tập data mới đc hình thành bằng cách áp dụng hàm func cho mỗi phần tử của tập dữ liệu nguồn
    + filter(func): trả về một tập dữ liệu mới tạo ra bằng cách lọc các phần tử của tập dữ liệu nguồn mà func trả về true.
@@ -56,7 +54,7 @@ Spark Hadoop
    + reduce: Tập hợp các phần tử tập data sử dụng cùng 1 hàm func
    + collect: trả về all phần tử data dạng mảng
    + count: Trả về số lượng phần tử tập data
-* Spark cung cấp 2 kiểu shared variables
+3, Spark cung cấp 2 kiểu shared variables
  - Broadcast Variables: Chỉ được phép đọc giá trị biến trên mỗi máy, không cho phép sửa đổi nhằm đảm bảo cùng giá trị của biến broadcasr trên all node
 - Accumulators: là biến chỉ được phép add qua các phương thức như: sum,count,.. hỗ trợ hiệu quả tính toan song song. Cho phép thay đổi giá trị, đọc ghi trên biến này
-*  
+4, Shuffle sort
