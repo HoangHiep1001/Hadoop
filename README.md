@@ -29,10 +29,12 @@
  - Sơ đồ luồng dữ liệu của MapReduce cho một reduce task:
 ![alt text](https://bienuit.files.wordpress.com/2014/07/selection_003.png)
 
-
 3, HDFS:
  - Là hệ thống lưu trữ chính dùng trong Hadoop, cung cấp khả năng truy cập với hiệu suất cao đến dữ liệu trên các cụm Hadoop.
  - HDFS tạo ra các phần nhỏ hơn của dữ liệu lớn và phân tán nó lên các node, mỗi phần dữ liệu nhỏ cũng đc sao chép nhiều lần trên nhiều node khác nhau. Chính vì vậy mà khi có lỗi ở một node thì hệ thống tự động dùng dữ liệu của node khác và tiếp tục xử lí dữ liệu.
  - Một HDFS cluster bao gồm 1 namenode là một node master quản lí hệ thống tệp tin, điều chỉnh truy cập đến các tập tin khác và các datanode bổ sung cho namenode, tác vụ chính của datanode là đọc và ghi tệp tin.
  - Kiến trúc của một HDFS:
 ![alt text](https://dinhnguyenngoc.files.wordpress.com/2014/07/hdfs_architecture.png?w=768&h=485) 
+
+Spark Hadoop
+![alt text](https://www.google.com/imgres?imgurl=https%3A%2F%2Fmiro.medium.com%2Fmax%2F1838%2F1*kW0usTU3tShomMP6Ke-DEg.png&imgrefurl=https%3A%2F%2Ftowardsdatascience.com%2Fa-beginners-guide-to-apache-spark-ff301cb4cd92&docid=JagNAldD5ambQM&tbnid=B7UuTcp6-RYblM%3A&vet=10ahUKEwivkaOs9ePjAhWUd94KHflUDcwQMwhoKBowGg..i&w=1838&h=956&bih=632&biw=1366&q=spark%20hadoop&ved=0ahUKEwivkaOs9ePjAhWUd94KHflUDcwQMwhoKBowGg&iact=mrc&uact=8)
